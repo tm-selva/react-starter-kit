@@ -1,7 +1,14 @@
 const webpack = require('webpack');
+require('idempotent-babel-polyfill');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: './dist/index.html',
+  filename: 'index.html',
+  inject: 'body'
+})
 
 module.exports = {
-    entry: __dirname +'/src/index.js',
+    entry: ["idempotent-babel-polyfill", __dirname +'/src/index.js'],
     module: {
         rules: [
           {
@@ -20,6 +27,7 @@ module.exports = {
       filename: 'bundle.js'
     },
     plugins: [
+      HtmlWebpackPluginConfig,
         new webpack.HotModuleReplacementPlugin()
       ],
     devServer: {
