@@ -1,8 +1,6 @@
 import { delay } from "redux-saga";
 import { put } from "redux-saga/effects";
-
 import { decrementAsyncSuccess, decrementSuccess, incrementAsyncSuccess, incrementSuccess } from "../actions/counter/counter";
-// import { fetchData } from "./api";
 
 // worker Saga: will be fired on INCREMENT actions
 function* onIncrement() {
@@ -15,7 +13,6 @@ function* onIncrement() {
     console.log(e);
   }
 }
-
 // worker Saga: will be fired on ASYNC INCREMENT actions
 function* onIncrementAsync() {
   try {

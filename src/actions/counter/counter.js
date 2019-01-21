@@ -13,9 +13,9 @@ import {
     return { type: INCREMENT };
   };
   
-  export const incrementAsync = () => ({
-    type: INCREMENT_ASYNC
-  });
+  export const incrementAsync = () => {
+    return {type: INCREMENT_ASYNC}
+  };
   
   export const incrementSuccess = () => ({
     type: INCREMENT_SUCCESS
