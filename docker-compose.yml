@@ -1,0 +1,11 @@
+version: '2'
+services: 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "${DEV_EXTERNAL_PORT}:${DEV_INTERNAL_PORT}"
+    volumes:
+      - ./:/opt/app
+    command:  npm start

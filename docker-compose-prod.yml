@@ -1,0 +1,9 @@
+version: '2'
+services: 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "${PROD_EXTERNAL_PORT}:${PROD_INTERNAL_PORT}"
+    command:  npm run prod
