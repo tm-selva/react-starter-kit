@@ -1,37 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import createSagaMiddleware from 'redux-saga';
-import { applyMiddleware, compose, createStore } from 'redux';
+
 import { Provider } from 'react-redux';
-import { logger } from 'redux-logger';
-
-
-import rootReducer from './reducers'
-import rootSaga from './sagas'
-
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-
-const sagaMiddleware = createSagaMiddleware();
-
-const composeEnhancer = (window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(
-  rootReducer,
-  composeEnhancer(
-    applyMiddleware(
-      sagaMiddleware,
-      logger
-    )
-  )
-);
-
-sagaMiddleware.run(rootSaga);
-
+import store from './store'
 
 class Main extends React.Component {
 
