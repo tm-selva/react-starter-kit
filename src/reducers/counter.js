@@ -1,4 +1,3 @@
-import { Action } from "redux";
 import {
   DECREMENT,
   DECREMENT_ASYNC,
